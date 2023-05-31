@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour 
 {
@@ -26,7 +27,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ignoreCollider();
         OnInput();
         OnRun();
     }
@@ -60,49 +60,23 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ignoreCollider() 
-    {
-   //     playerCollider = GetComponent<BoxCollider2D>();
-   //     bushCollider = GameObject.Find("Bush").GetComponent<BoxCollider2D>();
-   //
-   //     Physics2D.IgnoreCollision(playerCollider, bushCollider, true);
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collided with: " + other.name);
-       //
-       // if (other.tag == "Player")
-       // {
-       //     //access the player
-       //     // if the powerupID is 0
-       //     Player player = other.GetComponent<Player>();
-       //
-       //     if (player != null)
-       //     {
-       //         if (powerupID == 0)
-       //         {
-       //             player.TipleShootPowerUpOn();
-       //         }
-       //
-       //         else if (powerupID == 1)
-       //         {
-       //             player.SpeedBoostPowerUpOn();
-       //         }
-       //
-       //         else if (powerupID == 2)
-       //         {
-       //             player.EnableShields();
-       //         }
-       //
-       //
-       //     }
-       //
-       //     AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f);
-       //     //Destroy ourself
-       //     Destroy(this.gameObject);
-       // }
+        if (HasFindMonster())
+        {
+            SceneManager.LoadScene("Battle");
+        }
+        
+    }
 
+    public bool HasFindMonster()
+    {
+        if (Random.value > 0.7) //%30 percent chance (1 - 0.7 is 0.3)
+        {
+            return true;
+        }
+
+        return false;
     }
 
 }
