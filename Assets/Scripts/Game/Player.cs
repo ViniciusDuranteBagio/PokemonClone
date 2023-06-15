@@ -17,14 +17,11 @@ public class Player : MonoBehaviour
     private bool _isRunning;
     private Vector2 _direction;
 
-// Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         initialSpeed = speed;
     }
-
-    // Update is called once per frame
     void Update()
     {
         OnInput();
@@ -60,23 +57,29 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (HasFindMonster())
+        if (IsPlayerOnBush(collision.gameObject.tag))
         {
-            SceneManager.LoadScene("Battle");
+            HasFindMonster();
         }
-        
     }
 
-    public bool HasFindMonster()
+    public bool IsPlayerOnBush(string ObjectTagCollision)
+    {
+        if (ObjectTagCollision == "Bush")
+            return true;
+        
+        return false;
+    }
+
+    public void HasFindMonster()
     {
         if (Random.value > 0.7) //%30 percent chance (1 - 0.7 is 0.3)
         {
-            return true;
+            Debug.Log("achou");
+            SceneManager.LoadScene("Battle");
         }
-
-        return false;
     }
 
 }
