@@ -18,13 +18,6 @@ public class SelectPokemon : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         _startPosition = transform.position;
         _startScale = transform.localScale;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private IEnumerator MovePanel(bool startingAnimation) 
     {
         Vector3 endPosition;

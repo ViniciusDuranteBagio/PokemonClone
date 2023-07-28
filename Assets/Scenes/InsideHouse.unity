@@ -213,6 +213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badaf5ddb214791468a8147f37c698c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vertiacalMoveAmount: 30
+  _moveTime: 0.1
+  _scaleAmount: 1.1
 --- !u!1 &158519721
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +299,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 158519724}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477457216}
+        m_TargetAssemblyTypeName: SelectManager, Assembly-CSharp
+        m_MethodName: SelectInitialPokemon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &158519724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +433,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 292354678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477457216}
+        m_TargetAssemblyTypeName: SelectManager, Assembly-CSharp
+        m_MethodName: SelectInitialPokemon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &292354678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,7 +651,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1056318626}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477457216}
+        m_TargetAssemblyTypeName: SelectManager, Assembly-CSharp
+        m_MethodName: SelectInitialPokemon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1056318626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,6 +1006,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badaf5ddb214791468a8147f37c698c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vertiacalMoveAmount: 30
+  _moveTime: 0.1
+  _scaleAmount: 1.1
 --- !u!1 &1375543944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,6 +1099,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badaf5ddb214791468a8147f37c698c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vertiacalMoveAmount: 30
+  _moveTime: 0.1
+  _scaleAmount: 1.1
+--- !u!1 &1477457215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477457217}
+  - component: {fileID: 1477457216}
+  m_Layer: 0
+  m_Name: SelectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1477457216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477457215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172a4824156a1db4897dcba279c77a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1477457217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477457215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1027.9625, y: 491.6702, z: -28.1744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1679559464
 GameObject:
   m_ObjectHideFlags: 0
