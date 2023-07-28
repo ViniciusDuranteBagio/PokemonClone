@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour 
 {
-
-    private BoxCollider2D playerCollider, bushCollider;
     private Rigidbody2D rig;
 
     [SerializeField] private float speed;
@@ -59,17 +57,35 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("achou");
+
         if (IsPlayerOnBush(collision.gameObject.tag))
         {
             HasFindMonster();
+        }
+
+        if (IsPlayerOnDoor(collision.gameObject.tag))
+        {
+            Debug.Log("achou2");
+            SceneManager.LoadScene("InsideHouse");
         }
     }
 
     public bool IsPlayerOnBush(string ObjectTagCollision)
     {
-        if (ObjectTagCollision == "Bush")
+        return CheckWathPlayerCollide(ObjectTagCollision, "Bush");
+    }
+
+    public bool IsPlayerOnDoor(string ObjectTagCollision)
+    {
+        return CheckWathPlayerCollide(ObjectTagCollision, "Door");
+    }
+
+    public bool CheckWathPlayerCollide(string ObjectTagCollision, string CollideWith)
+    {
+        if (ObjectTagCollision == CollideWith)
             return true;
-        
+
         return false;
     }
 

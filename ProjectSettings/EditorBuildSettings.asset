@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle.unity
     guid: c6afd9cdd4ef1dd4ab427ce985573719
+  - enabled: 1
+    path: Assets/Scenes/InsideHouse.unity
+    guid: 97e476ead0bbbc64b83c9f6bfcfc9fb4
   m_configObjects: {}
